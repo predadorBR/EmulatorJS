@@ -20,7 +20,7 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     EJS_player = '#game';
-    EJS_gameUrl = 'http://localhost/EmulatorJS-melhorias/roms/'+urlParams.get('jogo'); // Url to Game rom
+    EJS_gameUrl = 'roms/'+urlParams.get('jogo'); // Url to Game rom
     EJS_core = urlParams.get('core');
     EJS_mouse = false; // SNES Mouse
     EJS_multitap = true; // SNES Multitap
