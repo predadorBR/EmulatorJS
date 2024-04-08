@@ -3925,8 +3925,12 @@ class EmulatorJS {
                 this.gameManager.setRewindGranularity(parseInt(value));
             }
         } else if (option === "vsync") {
-            this.gameManager.setVSync(value === "enabled");
+            //this.gameManager.setVSync(value === "enabled");
+        } else if (option === "aspect_ratio"){
+            this.gameManager.setAspect_ratio(value);
+            //alert("mudou");
         }
+
         this.gameManager.setVariable(option, value);
         this.saveSettings();
     }
@@ -4292,6 +4296,10 @@ class EmulatorJS {
             addToMenu(this.localization('Shaders'), 'shader', shaderMenu, 'disabled');
         }
         
+        addToMenu(this.localization('aspect_ratio'), 'aspect_ratio', {
+            '0': "4:3",
+            '1': "16:9"
+        }, '16:9');
         addToMenu(this.localization('FPS'), 'fps', {
             'show': this.localization("show"),
             'hide': this.localization("hide")

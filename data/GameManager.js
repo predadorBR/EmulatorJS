@@ -29,10 +29,23 @@ class EJS_GameManager {
             toggleSlowMotion: this.Module.cwrap('toggle_slow_motion', 'null', ['number']),
             setSlowMotionRatio: this.Module.cwrap('set_sm_ratio', 'null', ['number']),
             getFrameNum: this.Module.cwrap('get_current_frame_count', 'number', ['']),
-            setVSync: this.Module.cwrap('set_vsync', 'null', ['number'])
+            setVSync: this.Module.cwrap('set_vsync', 'null', ['number']),
+            setAspect_ratio: this.Module.cwrap('aspect_ratio_index', 'null', ['number'])
         }
         this.writeFile("/home/web_user/retroarch/userdata/config/Beetle PSX HW/Beetle PSX HW.opt", 'beetle_psx_hw_renderer = "software"\n');
         this.writeFile("/home/web_user/retroarch/userdata/config/MAME 2003 (0.78)/MAME 2003 (0.78).opt", 'mame2003_skip_disclaimer = "enabled"\nmame2003_skip_warnings = "enabled"\n');
+        var snes9x_opcoes='snes9x_overclock_superfx = "500%"\n'+
+                          //'snes9x_overclock_cycles = "max"\n'+
+                          'snes9x_overclock_cycles = "compatible"\n'+
+                          'snes9x_block_invalid_vram_access = "enabled"\n'+
+                          'snes9x_echo_buffer_hack = "enabled"\n'+
+                          'snes9x_hires_blend = "merge"\n'+
+                          'snes9x_gfx_clip = "enabled"\n'+
+                          'snes9x_gfx_transp = "enabled"\n'+
+                          'snes9x_randomize_memory = "enabled"\n'+
+                          'snes9x_reduce_sprite_flicker = "enabled"\n'+
+                          'snes9x_overscan = "enabled"\n';
+        this.writeFile("/home/web_user/retroarch/userdata/config/Snes9x/Snes9x.opt", snes9x_opcoes);
         
         this.mkdir("/data");
         this.mkdir("/data/saves");
@@ -103,13 +116,18 @@ class EJS_GameManager {
         } catch(e) {}
     }
     getRetroArchCfg() {
-        return "autosave_interval = 60\n" +
-               "screenshot_directory = \"/\"\n" +
+        //console.log("abner:"+this.EJS.widescreen);
+        return "screenshot_directory = \"/\"\n" +
                "block_sram_overwrite = false\n" +
                "video_gpu_screenshot = false\n" +
                "audio_latency = 64\n" +
                "video_top_portrait_viewport = true\n" +
-               "video_vsync = true\n" +
+               "video_vsync = false\n" +
+               "aspect_ratio_index = 1\n"+
+               //"video_hard_sync = true\n"+
+               //"video_hard_sync_frames = 3\n"+
+               "video_frame_delay = 15\n"+
+               //(this.EJS.widescreen ? "aspect_ratio_index = 1\n" : "aspect_ratio_index = 0\n"),
                "video_smooth = false\n" +
                "fastforward_ratio = 3.0\n" +
                "slowmotion_ratio = 3.0\n" +
@@ -310,7 +328,10 @@ class EJS_GameManager {
         })
     }
     setVSync(enabled) {
-        this.functions.setVSync(enabled);
+        //this.functions.setVSync(enabled);
+    }
+    setAspect_ratio(value) {
+        this.functions.setAspect_ratio(value);
     }
     toggleMainLoop(playing) {
         this.functions.toggleMainLoop(playing);

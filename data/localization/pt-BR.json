@@ -357,5 +357,8 @@
     "pcsx rearmed gunconadjustx": "pcsx rearmed - gunconadjustx",
     "pcsx rearmed gunconadjusty": "pcsx rearmed - gunconadjusty",
     "pcsx rearmed gunconadjustratiox": "pcsx rearmed - gunconadjustratiox",
-    "pcsx rearmed gunconadjustratioy": "pcsx rearmed - gunconadjustratioy"
+    "pcsx rearmed gunconadjustratioy": "pcsx rearmed - gunconadjustratioy",
+    "aspect_ratio": "Proporção da tela",
+    "16:9": "16:9"
+    
 }
