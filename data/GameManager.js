@@ -38,11 +38,11 @@ class EJS_GameManager {
                           //'snes9x_overclock_cycles = "max"\n'+
                           'snes9x_overclock_cycles = "compatible"\n'+
                           'snes9x_block_invalid_vram_access = "enabled"\n'+
-                          'snes9x_echo_buffer_hack = "enabled"\n'+
+                          //'snes9x_echo_buffer_hack = "enabled"\n'+
                           'snes9x_hires_blend = "merge"\n'+
                           'snes9x_gfx_clip = "enabled"\n'+
                           'snes9x_gfx_transp = "enabled"\n'+
-                         // 'snes9x_randomize_memory = "enabled"\n'+
+                          'snes9x_randomize_memory = "enabled"\n'+
                           'snes9x_reduce_sprite_flicker = "enabled"\n'+
                           'snes9x_overscan = "enabled"\n';
         this.writeFile("/home/web_user/retroarch/userdata/config/Snes9x/Snes9x.opt", snes9x_opcoes);
@@ -126,7 +126,7 @@ class EJS_GameManager {
                "aspect_ratio_index = 1\n"+
                //"video_hard_sync = true\n"+
                //"video_hard_sync_frames = 3\n"+
-               "video_frame_delay = 12\n"+
+               "video_frame_delay = 13\n"+
                //(this.EJS.widescreen ? "aspect_ratio_index = 1\n" : "aspect_ratio_index = 0\n"),
                "video_smooth = false\n" +
                "fastforward_ratio = 3.0\n" +
