@@ -16,6 +16,7 @@
         <div id="game"></div>
     </div>
     <script src="data/loader.js" type="text/javascript"></script>
+   <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -27,6 +28,18 @@
     EJS_language = 'pt-BR'; 
     window.EJS_DEBUG_XX = true;
    // EJS.widescreen = 1;
+
+   function netplay() {
+    console.log("canvas");
+   // if(document.getElementsByTagName("canvas"). != null) {
+  //console.log("achou canvas");
+//} else {
+  //console.log("não achou canvas");
+//}
+}
+const socket = io("https://servidor-socket.onrender.com");
+socket.emit('chat message', "abner");
+setInterval(netplay, 500); //método executa a função após três segundos
 </script>
 </body>
 </html>
