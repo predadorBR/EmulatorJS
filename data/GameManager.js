@@ -126,7 +126,7 @@ class EJS_GameManager {
                "aspect_ratio_index = 1\n"+
                //"video_hard_sync = true\n"+
                //"video_hard_sync_frames = 3\n"+
-               "video_frame_delay = 13\n"+
+               "video_frame_delay = 14\n"+
                //(this.EJS.widescreen ? "aspect_ratio_index = 1\n" : "aspect_ratio_index = 0\n"),
                "video_smooth = false\n" +
                "fastforward_ratio = 3.0\n" +
