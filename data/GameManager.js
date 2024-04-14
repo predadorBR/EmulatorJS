@@ -40,11 +40,11 @@ class EJS_GameManager {
                           //'snes9x_block_invalid_vram_access = "enabled"\n'+
                           //'snes9x_echo_buffer_hack = "enabled"\n'+
                           'snes9x_hires_blend = "merge"\n'+
-                          'snes9x_gfx_clip = "enabled"\n'+
-                          'snes9x_gfx_transp = "enabled"\n'+
+                          //'snes9x_gfx_clip = "enabled"\n'+
+                          //'snes9x_gfx_transp = "enabled"\n'+
                           //'snes9x_randomize_memory = "enabled"\n'+
-                          'snes9x_reduce_sprite_flicker = "enabled"\n'+
-                          'snes9x_overscan = "enabled"\n';
+                          //'snes9x_reduce_sprite_flicker = "enabled"\n'+
+                          //'snes9x_overscan = "enabled"\n';
         this.writeFile("/home/web_user/retroarch/userdata/config/Snes9x/Snes9x.opt", snes9x_opcoes);
         
         this.mkdir("/data");
