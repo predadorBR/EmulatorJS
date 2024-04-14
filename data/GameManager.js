@@ -37,7 +37,7 @@ class EJS_GameManager {
         var snes9x_opcoes='snes9x_overclock_superfx = "500%"\n'+
                           //'snes9x_overclock_cycles = "max"\n'+
                           'snes9x_overclock_cycles = "compatible"\n'+
-                          'snes9x_block_invalid_vram_access = "enabled"\n'+
+                          //'snes9x_block_invalid_vram_access = "enabled"\n'+
                           //'snes9x_echo_buffer_hack = "enabled"\n'+
                           'snes9x_hires_blend = "merge"\n'+
                           'snes9x_gfx_clip = "enabled"\n'+
