@@ -35,8 +35,8 @@ class EJS_GameManager {
         this.writeFile("/home/web_user/retroarch/userdata/config/Beetle PSX HW/Beetle PSX HW.opt", 'beetle_psx_hw_renderer = "software"\n');
         this.writeFile("/home/web_user/retroarch/userdata/config/MAME 2003 (0.78)/MAME 2003 (0.78).opt", 'mame2003_skip_disclaimer = "enabled"\nmame2003_skip_warnings = "enabled"\n');
         var snes9x_opcoes= 'snes9x_overclock_superfx = "500%"\n'+
-                          'snes9x_overclock_cycles = "max"\n'+
-                        // 'snes9x_overclock_cycles = "compatible"\n'+
+                          //'snes9x_overclock_cycles = "max"\n'+
+                         'snes9x_overclock_cycles = "compatible"\n'+
                          'snes9x_block_invalid_vram_access = "enabled"\n'+
                         'snes9x_echo_buffer_hack = "enabled"\n'+
                           'snes9x_hires_blend = "merge"\n'+
